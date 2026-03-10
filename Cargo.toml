@@ -1,0 +1,9 @@
+[workspace]
+members = [
+    "contracts/redemption",
+    "tests/integration",
+]
+resolver = "2"
+
+[workspace.dependencies]
+soroban-sdk = { version = "22.0.0", features = ["testutils"] }

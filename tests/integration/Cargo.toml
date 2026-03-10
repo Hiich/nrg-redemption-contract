@@ -1,0 +1,9 @@
+[package]
+name = "nrg-redemption-tests"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dev-dependencies]
+soroban-sdk = { workspace = true, features = ["testutils"] }
+nrg-redemption = { path = "../../contracts/redemption" }
