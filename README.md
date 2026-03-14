@@ -174,3 +174,33 @@ Redemption records use persistent storage. On mainnet, entries approaching expir
 ## License
 
 MIT
+
+---
+
+## Testnet Deployment
+
+**Deployed:** 2026-03-14 · Stellar Testnet
+
+### Contract IDs
+
+| Contract | ID |
+|---|---|
+| **SAC (NRG Token)** | `CDVDFTOTYIU7B7PWYQGI2KV6HWKIZI2PXRFBCVLQU2FBIJAZA2OGYNEL` |
+| **Redemption Contract** | `CDSNPGRFJD2GB3IPWRTRF4EHN55ZR66QG5LKN5YP6QKLPLH2F6AA5LJ4` |
+
+### Explorer
+
+- [SAC (NRG Token)](https://stellar.expert/explorer/testnet/contract/CDVDFTOTYIU7B7PWYQGI2KV6HWKIZI2PXRFBCVLQU2FBIJAZA2OGYNEL)
+- [Redemption Contract](https://stellar.expert/explorer/testnet/contract/CDSNPGRFJD2GB3IPWRTRF4EHN55ZR66QG5LKN5YP6QKLPLH2F6AA5LJ4)
+
+### Build environment
+
+- Rust 1.94.0
+- Target: `wasm32v1-none` (required for Soroban VM — `wasm32-unknown-unknown` emits reference-types that Soroban rejects)
+- stellar-cli v25.2.0
+- soroban-sdk v22.0.10
+- WASM: 24,812 bytes optimized
+
+### Build note
+
+The workspace `Cargo.toml` had `testutils` as a workspace-level feature dependency which prevents WASM builds. If you encounter build errors, ensure `testutils` is only enabled in `[dev-dependencies]`, not at the workspace feature level.
