@@ -57,23 +57,23 @@ fn redemption_count(env) -> u64
 ## Requirements
 
 - Rust 1.70+
-- `wasm32-unknown-unknown` target
+- `wasm32v1-none` target (required for Soroban VM)
 - `stellar-cli` for deployment
 
 ```sh
-rustup target add wasm32-unknown-unknown
+rustup target add wasm32v1-none
 cargo install --locked stellar-cli --features opt
 ```
 
 ## Build
 
 ```sh
-cargo build --release --target wasm32-unknown-unknown \
+cargo build --release --target wasm32v1-none \
   -p nrg-redemption
 ```
 
 The compiled WASM will be at:
-`target/wasm32-unknown-unknown/release/nrg_redemption.wasm`
+`target/wasm32v1-none/release/nrg_redemption.wasm`
 
 ## Test
 
@@ -114,7 +114,7 @@ Note the SAC contract ID returned.
 stellar contract deploy \
   --network testnet \
   --source deployer \
-  --wasm target/wasm32-unknown-unknown/release/nrg_redemption.wasm
+  --wasm target/wasm32v1-none/release/nrg_redemption.wasm
 ```
 
 Note the contract ID returned.
